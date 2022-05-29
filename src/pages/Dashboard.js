@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Banner from "../sections/banner";
 import TeamSection from "../sections/team-section";
 import BlogSection from "../sections/blog-section";
@@ -24,7 +24,19 @@ export default function IndexPage() {
 			<Banner heading="Most Popular Places To Explore" subtext="Dream. Explore. Discover." />
 			<div>
 				{typeof data.recomLists === "undefined" ? (
-					<p>Loading</p>
+					<p
+						style={{
+							width: "100%",
+							height: "20vh",
+							marginTop: "40vh",
+							padding: "2vh 0",
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "center",
+						}}
+					>
+						Loading
+					</p>
 				) : (
 					<div>
 						<Title heading="Top places specially curated for you" />
