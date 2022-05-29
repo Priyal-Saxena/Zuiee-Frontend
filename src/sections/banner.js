@@ -1,9 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Container, Box, Heading, Text, Image, Button } from "theme-ui";
+// import BannerImg from "https://images.unsplash.com/photo-1530789253388-582c481c54b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80";
 import BannerImg from "../assets/banner-thumb.png";
 import ShapeLeft from "../assets/shape-left.png";
 import ShapeRight from "../assets/shape-right.png";
+import "./banner.css"
+{
+	/* <iframe src="https://giphy.com/embed/lXC2gmHf2ypUs" width="480" height="255" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>
+<a href="https://giphy.com/gifs/lXC2gmHf2ypUs">via GIPHY</a></p> */
+}
 
 export default function Banner(props) {
 	return (
@@ -20,7 +26,27 @@ export default function Banner(props) {
 				</Box>
 
 				<Box sx={styles.banner.imageBox}>
-					<Image src={BannerImg} alt="banner" />
+					{/* <div style={{
+						width:"100%",
+						height:0,
+						paddingBottom:"53%",
+						position:"relative"
+					}}>
+						<iframe
+							src="https://giphy.com/embed/lXC2gmHf2ypUs"
+							width="100%"
+							height="100%"
+							style={{ position: "absolute" }}
+							frameBorder="0"
+							// class="giphy-embed"
+							allowFullScreen
+						></iframe>
+					</div> */}
+<div id="box" className="gradient-border">
+<Image style={{maxWidth:"85vw"}}  src={BannerImg} alt="banner" />
+{/* <Image  src="https://images.unsplash.com/photo-1495837174058-628aafc7d610?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="banner" /> */}
+{/* <Image  src="https://images.unsplash.com/photo-1497302347632-904729bc24aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="banner" /> */}
+</div>
 				</Box>
 			</Container>
 		</section>
@@ -81,5 +107,6 @@ const styles = {
 				height: [245, "auto"],
 			},
 		},
+		
 	},
 };

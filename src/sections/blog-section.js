@@ -117,7 +117,10 @@ export default function BlogSection(placeid) {
 			let streetAddress = faker.address.streetAddress(false);
 			let city = faker.address.cityName();
 			let state = faker.address.state();
-			let dist = faker.random.number(24);
+			let dist = faker.datatype.number({
+				min: 1,
+				max: 25,
+			});
 
 			places.push({
 				id: placeid[i],
