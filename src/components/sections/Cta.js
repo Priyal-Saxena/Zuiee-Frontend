@@ -3,7 +3,18 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import Input from '../elements/Input';
+import Login from "../Login";
+import { Link } from "react-router-dom";
 
+const closeMenu = () => {
+  
+  fetch("/login").then(
+    res => res.json()
+  ).catch(
+    error => console.log(error)
+    
+  )
+};
 const propTypes = {
   ...SectionProps.types,
   split: PropTypes.bool
@@ -53,15 +64,18 @@ const Cta = ({
         >
           <div className="cta-slogan">
             <h3 className="m-0">
-              For previewing layouts and visual?
+              What are you waiting for?
               </h3>
           </div>
           <div className="cta-action">
-            <Input id="newsletter" type="email" label="Subscribe" labelHidden hasIcon="right" placeholder="Your best email">
-              <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 5H1c-.6 0-1 .4-1 1s.4 1 1 1h8v5l7-6-7-6v5z" fill="#376DF9" />
-              </svg>
-            </Input>
+            
+            <Link
+													to="/login"
+													
+													onClick={closeMenu}
+												>
+												<Login/>
+												</Link>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ const App = () => {
 	const [data, setData] = useState([{}]);
 
 	useEffect(() => {
-		fetch("/members")
+		fetch("/get_recom")
 			.then(res => res.json())
 			.then(data => {
 				setData(data);
@@ -42,23 +42,25 @@ const App = () => {
 			});
 	}, []); //empty array is passed at last so that this code runs only once
 	return (
-		// <div>
-		// 	{typeof data.members === "undefined" ? (
-		// 		<p>Loading</p>
-		// 	) : (
-		// 		data.members.map((member, i) => <p key={i}>{member}</p>)
-		// 	)}
-		// </div>
-		<ScrollReveal
-			ref={childRef}
-			children={() => (
-				<Switch>
-					<AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-					<AppRoute exact path="/dashboard" component={Dashboard} layout={LayoutDefault} />
-					{/* <AppRoute exact path="/" component={Dashboard} layout={LayoutDefault} /> */}
-				</Switch>
+		<div>
+			{/* <div>
+			{typeof data.recomLists === "undefined" ? (
+				<p>Loading</p>
+			) : (
+				data.recomLists.map((recomList, i) => <p key={i}>{recomList}</p>)
 			)}
-		/>
+		</div> */}
+			<ScrollReveal
+				ref={childRef}
+				children={() => (
+					<Switch>
+						<AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+						<AppRoute exact path="/dashboard" component={Dashboard} layout={LayoutDefault} />
+						{/* <AppRoute exact path="/" component={Dashboard} layout={LayoutDefault} /> */}
+					</Switch>
+				)}
+			/>
+		</div>
 	);
 };
 

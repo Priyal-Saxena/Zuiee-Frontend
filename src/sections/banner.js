@@ -43,7 +43,7 @@ export default function Banner(props) {
 						></iframe>
 					</div> */}
 <div id="box" className="gradient-border">
-<Image style={{maxWidth:"85vw"}}  src={BannerImg} alt="banner" />
+<Image style={{maxWidth:"80vw"}}  src={BannerImg} alt="banner" />
 {/* <Image  src="https://images.unsplash.com/photo-1495837174058-628aafc7d610?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="banner" /> */}
 {/* <Image  src="https://images.unsplash.com/photo-1497302347632-904729bc24aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="banner" /> */}
 </div>
