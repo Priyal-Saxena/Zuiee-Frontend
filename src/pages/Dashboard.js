@@ -83,7 +83,7 @@ export default function IndexPage() {
 					</p>
 				) : (
 					<div>
-						<BlogSection placeid={data1.recomLists.genRecom} />
+						<BlogSection placeid={data2.recomLists.genRecom} />
 					</div>
 				)}
 				{/* gen recom */}
