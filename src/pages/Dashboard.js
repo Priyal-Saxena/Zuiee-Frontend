@@ -13,7 +13,7 @@ export default function IndexPage() {
 		fetch("/get_recom")
 			.then(res => res.json())
 			.then(data1 => {
-				setData(data1);
+				setData1(data1);
 				console.log(data1);
 			});
 	}, []); //empty array is passed at last so that this code runs only once
@@ -24,7 +24,7 @@ export default function IndexPage() {
 		fetch("/get_genRecom")
 			.then(res => res.json())
 			.then(data2 => {
-				setData(data2);
+				setData2(data2);
 				console.log(data2);
 			});
 	}, []); //empty array is passed at last so that this code runs only once
