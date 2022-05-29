@@ -58,8 +58,8 @@ const styles = {
 	},
 
 	memberThumb: {
-		width: ["70px", "80px", "100px", null, null, "130px"],
-		height: ["70px", "80px", "100px", null, null, "130px"],
+		width: ["100px", "150px", "170px", null, null, "130px"],
+		height: ["100px", "150px", "170px", null, null, "130px"],
 		flexShrink: 0,
 		border: "2px solid",
 		borderColor: "primary",

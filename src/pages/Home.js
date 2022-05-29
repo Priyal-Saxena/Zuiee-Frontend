@@ -17,6 +17,7 @@ const Home = () => {
 			<FeaturesSplit invertMobile topDivider imageFill className="illustration-section-02" />
 			<Testimonial topDivider />
 			<Cta split />
+
 			{/* <img src="http://placeimg.com/640/480/nature" />
 			<img src="http://placeimg.com/640/480/nature" /> */}
 			{/* https://source.unsplash.com/random/?city,night */}

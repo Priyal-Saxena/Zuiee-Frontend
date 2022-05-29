@@ -11,173 +11,53 @@ import Member3 from "../assets/team/member-3.png";
 import Member4 from "../assets/team/member-4.png";
 import Member5 from "../assets/team/member-5.png";
 import Member6 from "../assets/team/member-6.png";
+const faker = require("faker");
+// var Faker = require("./node_modules/Faker");
 
-const data = [
-	{
-		id: 1,
-		imgSrc: Member1,
-		altText: "Saimon Harmer",
-		title: "Saimon Harmer",
-		designation: "CEO and Founder",
-		socialProfile: [
-			{
-				id: 1,
-				name: "facebook",
-				path: "#",
-				icon: <FaFacebookF />,
-			},
-			{
-				id: 2,
-				name: "twitter",
-				path: "#",
-				icon: <FaTwitter />,
-			},
-			{
-				id: 3,
-				name: "instagram",
-				path: "#",
-				icon: <FaInstagram />,
-			},
-		],
-	},
-	{
-		id: 2,
-		imgSrc: Member2,
-		altText: "Aaron Nunez",
-		title: "Aaron Nunez",
-		designation: "Founder",
-		socialProfile: [
-			{
-				id: 1,
-				name: "facebook",
-				path: "#",
-				icon: <FaFacebookF />,
-			},
-			{
-				id: 2,
-				name: "twitter",
-				path: "#",
-				icon: <FaTwitter />,
-			},
-			{
-				id: 3,
-				name: "instagram",
-				path: "#",
-				icon: <FaInstagram />,
-			},
-		],
-	},
-	{
-		id: 3,
-		imgSrc: Member3,
-		altText: "Aaron Nunez",
-		title: "Aaron Nunez",
-		designation: "Web Designer",
-		socialProfile: [
-			{
-				id: 1,
-				name: "facebook",
-				path: "#",
-				icon: <FaFacebookF />,
-			},
-			{
-				id: 2,
-				name: "twitter",
-				path: "#",
-				icon: <FaTwitter />,
-			},
-			{
-				id: 3,
-				name: "instagram",
-				path: "#",
-				icon: <FaInstagram />,
-			},
-		],
-	},
-	{
-		id: 4,
-		imgSrc: Member4,
-		altText: "Lina Jutila",
-		title: "Lina Jutila",
-		designation: "Web Developer",
-		socialProfile: [
-			{
-				id: 1,
-				name: "facebook",
-				path: "#",
-				icon: <FaFacebookF />,
-			},
-			{
-				id: 2,
-				name: "twitter",
-				path: "#",
-				icon: <FaTwitter />,
-			},
-			{
-				id: 3,
-				name: "instagram",
-				path: "#",
-				icon: <FaInstagram />,
-			},
-		],
-	},
-	{
-		id: 5,
-		imgSrc: Member5,
-		altText: "Saimon Harmer",
-		title: "Saimon Harmer",
-		designation: "CEO and Founder",
-		socialProfile: [
-			{
-				id: 1,
-				name: "facebook",
-				path: "#",
-				icon: <FaFacebookF />,
-			},
-			{
-				id: 2,
-				name: "twitter",
-				path: "#",
-				icon: <FaTwitter />,
-			},
-			{
-				id: 3,
-				name: "instagram",
-				path: "#",
-				icon: <FaInstagram />,
-			},
-		],
-	},
-	{
-		id: 6,
-		imgSrc: Member6,
-		altText: "Aaron Nunez",
-		title: "Aaron Nunez",
-		designation: "Web Designer",
-		socialProfile: [
-			{
-				id: 1,
-				name: "facebook",
-				path: "#",
-				icon: <FaFacebookF />,
-			},
-			{
-				id: 2,
-				name: "twitter",
-				path: "#",
-				icon: <FaTwitter />,
-			},
-			{
-				id: 3,
-				name: "instagram",
-				path: "#",
-				icon: <FaInstagram />,
-			},
-		],
-	},
-];
+export default function TeamSection(frndid) {
+	let users = [];
+	function generateFriend(frndid) {
+		// let users = [];
 
-export default function TeamSection() {
+		for (let i = 0; i < frndid.frndid.length; i++) {
+			let title = faker.name.findName();
+			let email = faker.internet.email();
+			let designation = faker.name.jobType();
+
+			users.push({
+				id: frndid[i],
+				// imgSrc: {'https://source.unsplash.com/random?person?sig=${Math.random()}'},
+				altText: title,
+				title: title,
+				designation: designation,
+				email: email,
+				imgSrc: `https://source.unsplash.com/random?profile?${Math.random()}`,
+				socialProfile: [
+					{
+						id: 1,
+						name: "facebook",
+						path: "#",
+						icon: <FaFacebookF />,
+					},
+					{
+						id: 2,
+						name: "twitter",
+						path: "#",
+						icon: <FaTwitter />,
+					},
+					{
+						id: 3,
+						name: "instagram",
+						path: "#",
+						icon: <FaInstagram />,
+					},
+				],
+			});
+		}
+
+		// return { data: users };
+	}
+	generateFriend(frndid);
 	return (
 		<section>
 			<Container>
@@ -186,9 +66,11 @@ export default function TeamSection() {
 				{/* <Grid sx={styles.teamSectionRow}> */}
 				<div className={styles.teamSectionRow}>
 					{" "}
-					{data.map(item => (
+					{users.map(item => (
 						<TeamCard
 							key={`team--key${item.id}`}
+							// src={"https://source.unsplash.com/random?person?sig=${Math.random()}"}
+							// src={item.imgSrc}
 							src={item.imgSrc}
 							altText={item.altText}
 							title={item.title}

@@ -9,81 +9,81 @@ import PostThumb1 from "../assets/blog/1.jpg";
 import PostThumb2 from "../assets/blog/2.jpg";
 import PostThumb3 from "../assets/blog/3.jpg";
 import styles from "./styles.module.css";
-
-const data = [
-	{
-		id: 1,
-		imgSrc: PostThumb1,
-		altText: "Marketing",
-		postLink: "#",
-		title: "Product Marketing: Monopoly Market",
-		authorName: "Cali Cartel",
-		date: "Oct 20, 2020",
-	},
-	{
-		id: 2,
-		imgSrc: PostThumb2,
-		altText: "Creative",
-		postLink: "#",
-		title: "Product Marketing: Creative Market",
-		authorName: "James Carter",
-		date: "Oct 20, 2020",
-	},
-	{
-		id: 3,
-		imgSrc: PostThumb3,
-		altText: "Startup",
-		postLink: "#",
-		title: "Product Marketing: Startup Product Sales",
-		authorName: "Aston Aagar",
-		date: "Oct 20, 2020",
-	},
-	{
-		id: 4,
-		imgSrc: PostThumb2,
-		altText: "Creative",
-		postLink: "#",
-		title: "Product Marketing: Creative Market",
-		authorName: "James Carter",
-		date: "Oct 20, 2020",
-	},
-	{
-		id: 5,
-		imgSrc: PostThumb1,
-		altText: "Marketing",
-		postLink: "#",
-		title: "Product Marketing: Monopoly Market",
-		authorName: "Cali Cartel",
-		date: "Oct 20, 2020",
-	},
-	{
-		id: 6,
-		imgSrc: PostThumb2,
-		altText: "Creative",
-		postLink: "#",
-		title: "Product Marketing: Creative Market",
-		authorName: "James Carter",
-		date: "Oct 20, 2020",
-	},
-	{
-		id: 7,
-		imgSrc: PostThumb3,
-		altText: "Startup",
-		postLink: "#",
-		title: "Product Marketing: Startup Product Sales",
-		authorName: "Aston Aagar",
-		date: "Oct 20, 2020",
-	},
-	{
-		id: 8,
-		imgSrc: PostThumb2,
-		altText: "Creative",
-		postLink: "#",
-		title: "Product Marketing: Creative Market",
-		authorName: "James Carter",
-		date: "Oct 20, 2020",
-	},
-];
+const faker = require("faker");
+// const data = [
+// 	{
+// 		id: 1,
+// 		imgSrc: PostThumb1,
+// 		altText: "Marketing",
+// 		postLink: "#",
+// 		title: "Product Marketing: Monopoly Market",
+// 		authorName: "Cali Cartel",
+// 		date: "Oct 20, 2020",
+// 	},
+// 	{
+// 		id: 2,
+// 		imgSrc: PostThumb2,
+// 		altText: "Creative",
+// 		postLink: "#",
+// 		title: "Product Marketing: Creative Market",
+// 		authorName: "James Carter",
+// 		date: "Oct 20, 2020",
+// 	},
+// 	{
+// 		id: 3,
+// 		imgSrc: PostThumb3,
+// 		altText: "Startup",
+// 		postLink: "#",
+// 		title: "Product Marketing: Startup Product Sales",
+// 		authorName: "Aston Aagar",
+// 		date: "Oct 20, 2020",
+// 	},
+// 	{
+// 		id: 4,
+// 		imgSrc: PostThumb2,
+// 		altText: "Creative",
+// 		postLink: "#",
+// 		title: "Product Marketing: Creative Market",
+// 		authorName: "James Carter",
+// 		date: "Oct 20, 2020",
+// 	},
+// 	{
+// 		id: 5,
+// 		imgSrc: PostThumb1,
+// 		altText: "Marketing",
+// 		postLink: "#",
+// 		title: "Product Marketing: Monopoly Market",
+// 		authorName: "Cali Cartel",
+// 		date: "Oct 20, 2020",
+// 	},
+// 	{
+// 		id: 6,
+// 		imgSrc: PostThumb2,
+// 		altText: "Creative",
+// 		postLink: "#",
+// 		title: "Product Marketing: Creative Market",
+// 		authorName: "James Carter",
+// 		date: "Oct 20, 2020",
+// 	},
+// 	{
+// 		id: 7,
+// 		imgSrc: PostThumb3,
+// 		altText: "Startup",
+// 		postLink: "#",
+// 		title: "Product Marketing: Startup Product Sales",
+// 		authorName: "Aston Aagar",
+// 		date: "Oct 20, 2020",
+// 	},
+// 	{
+// 		id: 8,
+// 		imgSrc: PostThumb2,
+// 		altText: "Creative",
+// 		postLink: "#",
+// 		title: "Product Marketing: Creative Market",
+// 		authorName: "James Carter",
+// 		date: "Oct 20, 2020",
+// 	},
+// ];
 
 // const responsive = {
 // 	desktop: {
@@ -108,52 +108,46 @@ const data = [
 // 	},
 // };
 
-export default function BlogSection() {
+export default function BlogSection(placeid) {
+	let places = [];
+	function generatePlace(placeid) {
+		// let users = [];
+
+		for (let i = 0; i < placeid.placeid.length; i++) {
+			let streetAddress = faker.address.streetAddress(false);
+			let city = faker.address.cityName();
+			let state = faker.address.state();
+			let dist = faker.random.number(24);
+
+			places.push({
+				id: placeid[i],
+				// imgSrc: {'https://source.unsplash.com/random?person?sig=${Math.random()}'},
+				imgSrc: `http://placeimg.com/640/480/arch?nocache=${Math.random()}`,
+				altText: streetAddress,
+				streetAddress: streetAddress,
+				city: city,
+				state: state,
+				dist: dist,
+			});
+		}
+
+		// return { data: users };
+	}
+	generatePlace(placeid);
 	return (
 		<section className={styles.blogSectionRow}>
-			{/* <Container> */}
-			{/* <SectionHeader
-          slogan="our blog"
-          title="Explore our products for your business solution"
-        /> */}
-
-			{/* <Box sx={styles.carouselWrapper}> */}
-			{/* <Carousel
-            additionalTransfrom={0}
-            arrows={false}
-            autoPlaySpeed={3000}
-            centerMode={false}
-            className=""
-            containerClass="carousel-container"
-            customButtonGroup={<ButtonGroup />}
-            dotListClass="test"
-            draggable={true}
-            focusOnSelect={false}
-            infinite={true}
-            itemClass=""
-            keyBoardControl
-            minimumTouchDrag={80}
-            renderButtonGroupOutside
-            renderDotsOutside={false}
-            responsive={responsive}
-            showDots={false}
-            sliderClass=""
-            slidesToSlide={1}
-          > */}
-			{data.map(item => (
+			{places.map(item => (
 				<PostCard
 					key={item.id}
 					src={item.imgSrc}
 					alt={item.altText}
-					postLink={item.postLink}
-					title={item.title}
-					authorName={item.authorName}
-					date={item.date}
+					// postLink={item.postLink}
+					streetAddress={item.streetAddress}
+					city={item.city}
+					state={item.state}
+					dist={item.dist}
 				/>
 			))}
-			{/* </Carousel> */}
-			{/* </Box> */}
-			{/* </Container> */}
 		</section>
 	);
 }

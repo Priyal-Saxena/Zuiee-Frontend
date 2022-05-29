@@ -5,7 +5,7 @@ import BannerImg from "../assets/banner-thumb.png";
 import ShapeLeft from "../assets/shape-left.png";
 import ShapeRight from "../assets/shape-right.png";
 
-export default function Banner(props) {
+export default function Title(props) {
 	return (
 		<section sx={styles.banner} id="home">
 			<Container sx={styles.banner.container}>
@@ -19,9 +19,9 @@ export default function Banner(props) {
 					{/* <Button variant="primary">Explore</Button> */}
 				</Box>
 
-				<Box sx={styles.banner.imageBox}>
+				{/* <Box sx={styles.banner.imageBox}>
 					<Image src={BannerImg} alt="banner" />
-				</Box>
+				</Box> */}
 			</Container>
 		</section>
 	);
@@ -41,10 +41,10 @@ const styles = {
 			height: "100%",
 			width: "100%",
 			zIndex: -1,
-			backgroundImage: `url(${ShapeLeft})`,
-			backgroundRepeat: `no-repeat`,
-			backgroundPosition: "bottom left",
-			backgroundSize: "36%",
+			// backgroundImage: `url(${ShapeLeft})`,
+			// backgroundRepeat: `no-repeat`,
+			// backgroundPosition: "bottom left",
+			// backgroundSize: "36%",
 		},
 		"&::after": {
 			position: "absolute",
@@ -54,10 +54,10 @@ const styles = {
 			height: "100%",
 			width: "100%",
 			zIndex: -1,
-			backgroundImage: `url(${ShapeRight})`,
-			backgroundRepeat: `no-repeat`,
-			backgroundPosition: "bottom right",
-			backgroundSize: "32%",
+			// backgroundImage: `url(${ShapeRight})`,
+			// backgroundRepeat: `no-repeat`,
+			// backgroundPosition: "bottom right",
+			// backgroundSize: "32%",
 		},
 		container: {
 			minHeight: "inherit",
