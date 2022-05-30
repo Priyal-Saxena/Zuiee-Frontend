@@ -26,6 +26,7 @@ export default function IndexPage() {
 			.then(data2 => {
 				setData2(data2);
 				console.log(data2);
+				// console.log(data2.genRecom.length);
 			});
 	}, []); //empty array is passed at last so that this code runs only once
 	return (
@@ -34,7 +35,7 @@ export default function IndexPage() {
 
 			<Banner heading="Most Popular Places To Explore" subtext="Dream. Explore. Discover." />
 			<div>
-				{typeof data1.recomLists === "undefined" ? (
+				{typeof data1 === "undefined" ? (
 					<p
 						style={{
 							width: "100%",
@@ -52,22 +53,23 @@ export default function IndexPage() {
 					<div>
 						<Title heading="Discover where your friends are" />
 						{/* frnd recom */}
-						<BlogSection placeid={data1.recomLists.frndRecom} />
+
+						<BlogSection placeid={data1.frndRecom} />
 
 						<Title heading="Most popular destinations" />
-						<BlogSection placeid={data1.recomLists.topRatedRecom} />
+						<BlogSection placeid={data1.topRatedRecom} />
 
 						<Title heading="Your favourite spots" />
 						{/* top rated recom */}
-						<BlogSection placeid={data1.recomLists.topVisitedRecom} />
+						<BlogSection placeid={data1.topVisitedRecom} />
 
 						<Title heading="Your Friends" />
-						<TeamSection frndid={data1.recomLists.Frnds} />
+						<TeamSection frndid={data1.Frnds} />
 					</div>
 				)}
 
 				<Title heading="Top places specially curated for you" />
-				{typeof data2.recomLists === "undefined" ? (
+				{typeof data2 === "undefined" ? (
 					<p
 						style={{
 							width: "100%",
@@ -83,7 +85,7 @@ export default function IndexPage() {
 					</p>
 				) : (
 					<div>
-						<BlogSection placeid={data2.recomLists.genRecom} />
+						<BlogSection placeid={data2.genRecom} />
 					</div>
 				)}
 				{/* gen recom */}

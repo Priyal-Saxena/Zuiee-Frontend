@@ -16,16 +16,18 @@ const faker = require("faker");
 
 export default function TeamSection(frndid) {
 	let users = [];
+	console.log(frndid.frndid);
 	function generateFriend(frndid) {
 		// let users = [];
 
-		for (let i = 0; i < frndid.frndid.length; i++) {
+		for (let i = 0; i < 6; i++) {
+			// for (const frnd in frndid) {
 			let title = faker.name.findName();
 			let email = faker.internet.email();
 			let designation = faker.name.jobType();
 
 			users.push({
-				id: frndid[i],
+				id: i,
 				// imgSrc: {'https://source.unsplash.com/random?person?sig=${Math.random()}'},
 				altText: title,
 				title: title,

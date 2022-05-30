@@ -113,7 +113,8 @@ export default function BlogSection(placeid) {
 	function generatePlace(placeid) {
 		// let users = [];
 
-		for (let i = 0; i < placeid.placeid.length; i++) {
+		for (let i = 0; i < 8; i++) {
+			// for (const place in placeid) {
 			let streetAddress = faker.address.streetAddress(false);
 			let city = faker.address.cityName();
 			let state = faker.address.state();
@@ -123,7 +124,7 @@ export default function BlogSection(placeid) {
 			});
 
 			places.push({
-				id: placeid[i],
+				id: i,
 				// imgSrc: {'https://source.unsplash.com/random?person?sig=${Math.random()}'},
 				imgSrc: `http://placeimg.com/640/480/arch?nocache=${Math.random()}`,
 				altText: streetAddress,
